@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="768" height="286.5" viewBox="0 0 768 286.5">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="476" height="288.5" viewBox="0 0 476 288.5">
   <defs>
-    <filter id="Mmeal" x="0" y="98.5" width="768" height="188" filterUnits="userSpaceOnUse">
+    <filter id="Mmeal" x="0" y="100.5" width="473" height="188" filterUnits="userSpaceOnUse">
       <feOffset dy="6" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feFlood flood-opacity="0.161"/>
@@ -8,13 +8,13 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="Component_4_1" data-name="Component 4 – 1" transform="translate(9)">
+  <g id="Component_38_1" data-name="Component 38 – 1" transform="translate(9)">
+    <line id="Line_4" data-name="Line 4" y1="103" transform="translate(432 42)" fill="none" stroke="#df861d" stroke-width="27.5"/>
     <g transform="matrix(1, 0, 0, 1, -9, 0)" filter="url(#Mmeal)">
-      <text id="Mmeal-2" data-name="Mmeal" transform="translate(9 101.5)" fill="#df861d" font-size="150" font-family="Bauhaus93, 'Bauhaus \39 3'"><tspan x="148.608" y="135">Mmeal</tspan></text>
+      <text id="Mmeal-2" data-name="Mmeal" transform="translate(9 103.5)" fill="#df861d" font-size="150" font-family="Bauhaus93, 'Bauhaus \39 3'"><tspan x="1.108" y="135">Mmeal</tspan></text>
     </g>
-    <line id="Line_3" data-name="Line 3" y1="152" transform="translate(209.5)" fill="none" stroke="#df861d" stroke-width="20"/>
-    <line id="Line_4" data-name="Line 4" y1="103" transform="translate(580 42)" fill="none" stroke="#df861d" stroke-width="28"/>
-    <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="35" cy="61.5" rx="35" ry="61.5" transform="translate(545 0.5)" fill="#df861d"/>
-    <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="23.5" cy="41" rx="23.5" ry="41" transform="translate(557 21.5)" fill="#da7f14"/>
+    <line id="Line_3" data-name="Line 3" y1="152" transform="translate(60.5)" fill="none" stroke="#df861d" stroke-width="20"/>
+    <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="35" cy="61.5" rx="35" ry="61.5" transform="translate(397 0.5)" fill="#df861d"/>
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="23.5" cy="41" rx="23.5" ry="41" transform="translate(409 21.5)" fill="#da7f14"/>
   </g>
 </svg>

@@ -164,6 +164,7 @@ nav{
     display: flex;
     align-self: flex-end;
     justify-content:space-between;
+    margin-top: 2vh;
 }
 
 main{
@@ -173,10 +174,9 @@ main{
 
 .maintitle
 {
-    color: var(--unnamed-color-df861d);
     text-align: center;
-    font: normal normal normal 8vh Bernard MT;
-    letter-spacing: 0px;
+    font-family: Bernard MT;
+    font-size: 8vh;
     color: #DF861D;
     text-shadow: 0px 10px 6px #00000029;
 }
@@ -191,7 +191,7 @@ main{
 
 .icons-bar > img{
     width: 20%;
-    height: 80%;
+    height: 90vh; /*90vh*/
 }
 
 .searchbar{
@@ -201,15 +201,15 @@ main{
     margin: auto;
     margin-left: 1vw;
     justify-content: flex-start;
-    height: 6vh;
+    height: 70%;
     width: 40%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
-    border-radius: 3240px;
+    border: 0.2em solid #707070;
+    border-radius: 10em;
 }
 
 .icons-bar > i{
-    font-size: 8vh;
+    font-size: 6vh;
     padding-right: 0.5em;
     color: #DF861D;
 }
@@ -222,10 +222,11 @@ main{
 }
 
 input.search{
-    font: normal normal normal 2.5vh Segoe UI;
-    letter-spacing: 2px;
+    font: normal normal normal 2.5em Segoe UI;
+    letter-spacing: 0.1em;
+    align-items: center;
     text-align: left;
-    width: 30vw;
+    width: 75%;
     height: 3vh;
     background-color: transparent;
     border: none;
@@ -241,7 +242,7 @@ input.search{
 
 .fa-filter:before {
     content: "\f0b0";
-    font-size: 4vh;
+    font-size: 1em;
 }
 
 header{
@@ -254,6 +255,6 @@ header{
 
 .fa-plus:before {
     content: "\f067";
-    font-size: 5vw;
+    font-size: 8em;
     color: #DF861D;
 }

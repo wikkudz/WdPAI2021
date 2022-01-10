@@ -1,13 +1,13 @@
 section.recipes{
-    width: 100vw;
-    height: 80vh;
+    /*width: 100vw;*/
+    height: 76vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2vw;
-    padding: 2em;
-    overflow:scroll;
+    padding-left: 2em;
+    overflow-x: auto;
 }
-
+.section.recipes::-webkit-scrollbar {    display: none;}
 #recipe-1{
     border-radius: 2em;
     background-image: url('../img/ryzzkurczakiem.jpg');
@@ -15,12 +15,22 @@ section.recipes{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 2vh;
+}
+
+.reciepe-background{
+    background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    border-radius: 2em;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 76vh;
+
 }
 
 .recipe-title{
     text-align: center;
-    font: normal normal normal 5vh Bernard MT;
+    font: normal normal normal 6em Bernard MT;
     letter-spacing: 0px;
     color: #FFFFFF;
     margin-top: 1vh;
@@ -31,19 +41,90 @@ section.recipes{
     color: white;
     display: grid;
     height: 20%;
-    grid-template-areas: "rate level time"
-                         "rate price user";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr ;
+    /*grid-template-areas: "r l t"*/
+    /*                     "r p u";*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr) ;
 }
 
-.ocena{
+
+.rate{
+    grid-column: 1/2;
     grid-row: 1/3;
-    background: #DF861D;
     border-radius: 50%;
-    width: 11em;
-    height: 11em;
     margin-left: 1vw;
-    /* display: inline-block; */
+    background: transparent radial-gradient(closest-side at 50% 50%, #DF861D 0%, #4B2E0C 100%) 0% 0% no-repeat padding-box;
+    width: 10vh;
+    height: 10vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    /*margin-top: 3vh;*/
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rate-number{
+    font: normal normal normal 10em Bernard MT;
+    letter-spacing: 0px;
+    color: #000000;
+    font-size: 5vh;
+}
+
+.level{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    font: normal normal normal 1.5em Bernard MT;
+    color: #DF861D;
+}
+
+.level-text{
+    width: 50%;
+    text-align: center;
+
+}
+
+.time{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    font: normal normal normal 1.5em Bernard MT;
+    color: #DF861D;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1vw;
+    padding-left: 1vw;
+}
+
+.time > i{
+    padding-left: 0.5vw;
+    font-size: 2vh;
+}
+
+.price{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font: normal normal normal 1.5em Bernard MT;
+    color: #DF861D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.user{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    font: normal normal normal 1.5em Bernard MT;
+    color: #DF861D;
 }
 

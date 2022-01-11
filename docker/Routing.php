@@ -1,21 +1,27 @@
 <?php
 
-require_once 'src/controllers/DashboardController.php';
+require_once 'src/controllers/DefaultController.php';
 
-class Router {
+class Routing {
 
-    public static function run(string $url){
+    public static $routes;
 
-        $controller = new DashboardController();
+    public static function get(string $url, $controller){
 
-        if($url == 'login'){
-            //todo open login html page
-            $controller->login();
+        self::$routes[$url] = $controller;
+    }
+
+    public static function run($url){
+        $action = explode("/", $url)[0];
+
+        if(!array_key_exists($action,self::$routes)){
+            die("Wrong URL!");
         }
 
-        if($url == 'dashboard'){
-            //todo open dashbord html 
-            $controller->dashboard();
-        }
+        $controller = self::$routes[$action];
+        $object = new $controller;
+
+        $object ->$action();
+
     }
 }

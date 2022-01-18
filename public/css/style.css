@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+html {
+    font-size: 10px;
+}
+
+
+
+img{
+    width: 50vw;
+    height: 50vh;
+}
+
+.container{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: transparent url('../img/pratiksha-mohanty-V0xp-dTS3z0-unsplash2.jpg') 0% 0% no-repeat padding-box;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.login-container{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.email{
+    text-align: center;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #DF861D;
+}
+
+.password{
+    color: var(--unnamed-color-df861d);
+    text-align: center;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #DF861D;
+}
+
+form.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vw;
+    HEIGHT: 40vh;
+    background: rgba(0, 0, 0, 0.5) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 32px;
+
+}
+
+.logo{
+    width: 75vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    position: relative;
+    background: transparent linear-gradient(180deg, #FF8A00 0%, #FF911157 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    opacity: 1;
+    text-align: center;
+    /* font: normal 40px/58px Bauhaus 93; */
+    font-family: "Bauhaus 93";
+    font-size: 3em;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    /* line-height: 5em; */
+    width: 15vw;
+    height: 7vh;
+    border-radius: 32px;
+}
+
+button span {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+  }
+  
+  button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  button:hover span {
+    padding-right: 25px;
+  }
+  
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+input{
+    font: normal normal normal 20px/27px Segoe UI;
+    font-style: Segoe UI;
+    letter-spacing: 2px;
+    color: #DF861D;
+    text-align: center;
+    width: 18vw;
+    height: 3vh;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #DF861D;
+    padding: 1em;
+    margin: 1em;
+}
+
+@media(min-width: 411px) {
+    button {
+        font-size: 2rem;
+    }
+}
+
+.container2{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #363535 0%, #171820 100%) 0% 0% no-repeat padding-box;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+nav{
+    width: 100vw;
+    height: 10vh;
+    background: #171820 0% 0% no-repeat padding-box;
+    display: flex;
+    align-self: flex-end;
+    justify-content:space-between;
+    margin-top: 2vh;
+}
+
+main{
+    width: 100vw;
+    height: 90vh;
+}
+
+.maintitle
+{
+    text-align: center;
+    font-family: Bernard MT;
+    font-size: 8vh;
+    color: #DF861D;
+    text-shadow: 0px 10px 6px #00000029;
+}
+
+.icons-bar{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1vw;
+}
+
+.icons-bar > img{
+    width: 20%;
+    height: 90vh; /*90vh*/
+}
+
+.searchbar{
+    display: flex;
+    align-self: flex-end;
+    align-items: flex-end;
+    margin: auto;
+    margin-left: 1vw;
+    justify-content: flex-start;
+    height: 70%;
+    width: 40%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.2em solid #707070;
+    border-radius: 10em;
+}
+
+.icons-bar > i{
+    font-size: 6vh;
+    padding-right: 0.5em;
+    color: #DF861D;
+}
+
+.searchbar > i{
+    font-size: 5vh;
+    color: #DF861D;
+    padding-left: 0.3em;
+    padding-bottom: 0.1em;
+}
+
+input.search{
+    font: normal normal normal 2.5em Segoe UI;
+    letter-spacing: 0.1em;
+    align-items: center;
+    text-align: left;
+    width: 75%;
+    height: 3vh;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.5vh;
+}
+
+.fa-search:before {
+    content: "\f002";
+    margin-right: 0.3em;
+}
+
+.fa-filter:before {
+    content: "\f0b0";
+    font-size: 1em;
+}
+
+header{
+    width: 98vw;
+    height: 10vh;
+    display: flex;
+    justify-content:space-between;
+    margin: 1vh 1vw;
+}
+
+.fa-plus:before {
+    content: "\f067";
+    font-size: 8em;
+    color: #DF861D;
+}

@@ -8,6 +8,14 @@
     <title>Mmeal | Main page</title>
 </head>
 <body>
+    <div class="filter">
+        <div class="filter-header">Filtry</div>
+        <div class="filter-price"> cena </div>
+        <div class="meal-type">typ</div>
+        <div class="portions">ilosc porcji</div>
+        <div class="ingredients">skladniki</div>
+        <div class="filter-button">button</div>
+    </div>
     <div class="container2">
         <main>
             <header>

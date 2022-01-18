@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #363535 0%, #171820 100%) 0% 0% no-repeat padding-box;
+    background-size: cover;
+}
+.site{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav{
+    width: 100vw;
+    height: 10vh;
+    background: #171820 0% 0% no-repeat padding-box;
+    display: flex;
+    align-self: flex-end;
+    justify-content:space-between;
+    /*margin-top: 2vh;*/
+}
+
+.icons-bar{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1vw;
+}
+
+.icons-bar > img{
+    width: 20%;
+    height: 90vh; /*90vh*/
+}
+
+.searchbar{
+    display: flex;
+    align-self: flex-end;
+    align-items: flex-end;
+    margin: auto;
+    margin-left: 1vw;
+    justify-content: flex-start;
+    height: 70%;
+    width: 40%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.2em solid #707070;
+    border-radius: 10em;
+}
+
+.icons-bar > i{
+    font-size: 6vh;
+    padding-right: 0.5em;
+    color: #DF861D;
+}
+
+.searchbar > i{
+    font-size: 5vh;
+    color: #DF861D;
+    padding-left: 0.3em;
+    padding-bottom: 0.1em;
+}
+
+input.search{
+    font: normal normal normal 3vh Segoe UI;
+    letter-spacing: 0.1em;
+    align-items: center;
+    text-align: left;
+    width: 75%;
+    height: 3vh;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.5vh;
+}
+
+.fa-search:before {
+    content: "\f002";
+    margin-right: 0.3em;
+}
+
+.fa-filter:before {
+    content: "\f0b0";
+    font-size: 1em;
+}
+
+header{
+    width: 98vw;
+    height: 10vh;
+    display: flex;
+    justify-content:space-between;
+    margin: 1vh 1vw;
+}
+
+.maintitle
+{
+
+    text-align: center;
+    font-family: Bernard MT;
+    font-size: 8vh;
+    color: #DF861D;
+    text-shadow: 0px 10px 6px #00000029;
+}
+
+.fa-user-plus:before {
+    content: "\f234";
+    font-size: 8vh;
+    color: #DF861D;
+
+}
+section.recipes{
+    /*width: 100vw;*/
+    height: 76vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2vw;
+    padding-left: 2em;
+    overflow-x: auto;
+}
+.photo{
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    border: 5px solid #95989A;
+    background: transparent url('../img/blankprofile.png') 0% 0% no-repeat padding-box;
+    background-size: cover;
+}
+
+.person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+.name{
+    color: #7F7F7F;
+    font: normal normal bold 20px/30px Arial;
+}
+
+main{
+    width: 100vw;
+    height: 78vh;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column dense;
+    overflow-x: auto;
+}

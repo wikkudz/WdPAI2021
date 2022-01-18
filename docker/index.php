@@ -10,7 +10,7 @@ $pth = parse_url($pth, PHP_URL_PATH);
 Routing::get('','DefaultController');
 
 Routing::get('mainpage','DefaultController');
-
+Routing::get('friends', 'DefaultController');
 Routing::post('login','SecurityController');
 
 Routing::run($pth);

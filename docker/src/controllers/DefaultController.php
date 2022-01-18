@@ -14,4 +14,8 @@ class DefaultController extends AppController{
     {
         $this->render('main-page');
     }
+
+    public function friends(){
+        $this->render('friends');
+    }
 }

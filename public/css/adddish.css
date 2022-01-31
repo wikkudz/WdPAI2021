@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #363535 0%, #171820 100%) 0% 0% no-repeat padding-box;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+    width: 98vw;
+    height: 10vh;
+    display: flex;
+    justify-content:space-between;
+    margin: 1vh 1vw;
+}
+
+main{
+    width: 100vw;
+    height: 78vh;
+    display: flex;
+    padding: 2vh 2vw;
+
+}
+
+.maintitle{
+    font: 8vh Bernard MT;
+    color: #DF861D;
+    text-shadow: 0px 10px 6px #00000029;
+}
+
+.addtitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addtitle>i{
+    font-size: 5vh;
+    color: #FFFFFF;
+
+}
+
+.addtitle>input {
+    font: 4vh Bernard MT;
+    background: transparent;
+    border: none;
+}
+
+.minutes-counter{
+    display: flex;
+    align-items: center;
+    font: 4vh Bernard MT;
+    color: #DF861D;
+    gap: 0.5vw;
+}
+
+.photo{
+    width: 30vw;
+    border: 1px dashed #635C53;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredients{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+.portions{
+    font-family: "Bernard MT";
+    font-size: 5vh;
+    position: absolute;
+    bottom:12vh;
+    color: #DF861D;
+    margin-left: 1vw;
+}
+.ingredients-title{
+    margin-left: 1vw;
+    text-align: left;
+    font: normal normal normal 5vh Bernard MT;
+    color: #DF861D;
+}
+
+.description{
+    width: 40vw;
+    margin-left: 1vw;
+}
+
+.description-title{
+    margin-left: 1vw;
+    text-align: left;
+    font: normal normal normal 5vh Bernard MT;
+    letter-spacing: 0px;
+    color: #DF861D;
+}
+
+.description>textarea{
+
+    width: 38vw;
+    height: 50vh;
+    background: #FFFFFF;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+input[type="number" i]{
+    font: 4vh Bernard MT;
+    color: #DF861D;
+}
+
+.button2{
+    font-size: 10em;
+    background: transparent;
+    border: none;
+    color: #7F7F7F;
+}
+
+nav{
+    width: 100vw;
+    height: 10vh;
+    background: #171820 0% 0% no-repeat padding-box;
+    display: flex;
+    align-self: flex-end;
+    justify-content:space-between;
+    /*margin-top: 2vh;*/
+}
+
+.button1{
+    margin: auto;
+    margin-left: 1vw;
+    position: relative;
+    background: transparent linear-gradient(180deg, #FF8A00 0%, #FF911157 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    opacity: 1;
+    text-align: center;
+    font-family: "Bernard MT";
+    font-size: 3em;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    width: 30vw;
+    height: 7vh;
+    border-radius: 32px;
+}
+
+.button1 span {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+}
+
+.button1 span:after {
+    content: '\+';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button1:hover span {
+    padding-right: 25px;
+}
+
+.button1:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+nav{
+    width: 100vw;
+    height: 10vh;
+    background: #171820 0% 0% no-repeat padding-box;
+    display: flex;
+    align-self: flex-end;
+    justify-content:space-between;
+    /*margin-top: 2vh;*/
+}
+
+.icons-bar{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1vw;
+}
+
+.icons-bar > img{
+    width: 20%;
+
+}
+
+.icons-bar > i{
+    font-size: 6vh;
+    padding-right: 0.5em;
+    color: #DF861D;
+}
+
+.addstep{
+
+    /*margin: auto;*/
+    /*margin-left: 1vw;*/
+    position: absolute;
+    right: 2vw;
+    bottom: 12vh;
+    background: transparent linear-gradient(180deg, #FF8A00 0%, #FF911157 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    opacity: 1;
+    text-align: center;
+    font-family: "Bernard MT";
+    font-size: 0.9em;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    width: 7vw;
+    height: 7vh;
+    border-radius: 32px;
+}
+

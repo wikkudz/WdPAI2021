@@ -11,6 +11,8 @@ Routing::get('','DefaultController');
 
 Routing::get('mainpage','DefaultController');
 Routing::get('friends', 'DefaultController');
+Routing::get('dish', 'DefaultController');
+Routing::post('addDish', 'DishController');
 Routing::post('login','SecurityController');
 
 Routing::run($pth);

@@ -29,7 +29,7 @@
 
         <div class = "minutes-counter">
             Czas przygotowania
-            <input name="counter" type="number" min="0" max="100" value="1">
+            <input name="time" type="number" min="0" max="100" value="1">
             min
         </div>
     </header>
@@ -51,14 +51,14 @@
             </div>
             <div class="portions">
                 Ilosc porcji
-                <input name="counter" type="number" min="0" max="100" value="1">
+                <input name="amount" type="number" min="0" max="100" value="1">
             </div>
         </div>
         <div class="description">
             <div class="description-title">
                 Sposob przygotowania
             </div>
-            <textarea rows="2" cols="20" name="usrtxt" wrap="hard">
+            <textarea rows="2" cols="20" name="description-text" wrap="hard">
 
             </textarea>
             <button type="submit" class="addstep"><span>Dodaj krok</span></button>

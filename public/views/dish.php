@@ -10,26 +10,27 @@
 <body>
     <header>
         <div class="maintitle">
-<!--            --><?//= $dish -> getTitle() ?>
-            NAZWA DANIA
+            <?= $dish -> getTitle() ?>
         </div>
 
         <div class = "time">
-            30min
+            <?= $dish -> getTime() ?>min
             <i class="far fa-clock"></i>
         </div>
 
     </header>
     <main>
         <div class="photo">
-<!--            <img src = "public/img/ryzzkurczakiem.jpg">-->
-            <div class="shadow">
-                <div class="rate">
-                    <div class="rate-number">
-                        4,8
-                    </div>
-                </div>
-            </div>
+            <img src = "<?= $dish -> getImage() ?>">
+
+<!--            <div class="shadow">-->
+<!---->
+<!--                                <div class="rate">-->
+<!--                                    <div class="rate-number">-->
+<!--                                        4,8-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--            </div>-->
         </div>
         <div class="ingredients">
             <div class="ingredients-title">
@@ -39,7 +40,7 @@
 
             </div>
             <div class="portions">
-                Ilosc porcji: 4
+                Ilosc porcji: <?= $dish -> getAmount() ?>
             </div>
         </div>
         <div class="description">
@@ -47,8 +48,7 @@
                 Sposob przygotowania
             </div>
             <div class="description-main">
-                cos tam
-<!--                --><?//=$project -> getDescription() ?>
+                <?=$dish -> getDescription() ?>
             </div>
             <label class="custom-checkbox">
                 <input type="checkbox" />

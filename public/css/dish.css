@@ -57,13 +57,22 @@ main{
 .photo{
     width: 30vw;
     border-radius: 15px;
-    background-image: url('../img/ryzzkurczakiem.jpg');
+    /*background-image: url('../img/ryzzkurczakiem.jpg');*/
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 }
+
+.photo > img{
+    object-fit: cover;
+
+    border-radius: 15px;
+    position: relative;
+    z-index: -2;
+}
+
 .shadow{
     background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
     border-radius: 15px;
@@ -72,6 +81,7 @@ main{
     flex-direction: column;
     justify-content: flex-end;
     height: 76vh;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 }
 
 .rate{

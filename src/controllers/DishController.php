@@ -18,9 +18,10 @@ class DishController extends AppController
                 $_FILES['file']["tmp_name"],
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']["name"]
             );
-            $dish = new Dish($_POST['title'],$_POST['description'],$_FILES['file']['name']);
+            $image_url = self::UPLOAD_DIRECTORY.$_FILES['file']["name"];
+            $dish = new Dish($_POST['title'],$_POST['description-text'],$image_url,$_POST['amount'],$_POST['time']);
 
-            return $this ->render("dish",["messages" => $this ->messages]);
+            return $this ->render("dish",["messages" => $this ->messages, 'dish'=>$dish]);
         }
 
         $this ->render("add-dish", ["messages" => $this ->messages, 'dish']);

@@ -6,19 +6,22 @@ class Dish
     private $description;
     private $image;
     private $amount;
-
-
     private $time;
+    private $lvl;
+
+
+
 //    private $ingredients;
 
 
-    public function __construct($title, $description,  $image,$amount,$time)
+    public function __construct($title, $description,  $image,$amount,$time, $lvl)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->amount = $amount;
         $this->time = $time;
+        $this->lvl=$lvl;
     }
 
 
@@ -71,6 +74,16 @@ class Dish
     public function setTime(int $time)
     {
         $this->time = $time;
+    }
+
+    public function getLvl(): string
+    {
+        return $this->lvl;
+    }
+
+    public function setLvl(string $lvl): void
+    {
+        $this->lvl = $lvl;
     }
 //    public function getIngredients()
 //    {

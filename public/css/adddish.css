@@ -69,6 +69,7 @@ main{
     border: 1px dashed #635C53;
     border-radius: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -230,5 +231,23 @@ nav{
     width: 7vw;
     height: 7vh;
     border-radius: 32px;
+}
+
+.difficulty-lvl{
+    font-family: "Bernard MT";
+    font-size: 4vh;
+    color: #FFFFFF;
+}
+
+.difficulty-lvl > input{
+    font-family: "Bernard MT";
+    font-size: 4vh;
+    color: #DF861D;
+}
+
+.fa-plus:before {
+     content: "\f067";
+     color: #ffff;
+     padding-left: 1vw;
 }
 

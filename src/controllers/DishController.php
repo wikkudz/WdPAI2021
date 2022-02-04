@@ -2,6 +2,8 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Dish.php';
+require_once __DIR__.'/../repository/DishRepository.php';
+
 
 class DishController extends AppController
 {
@@ -9,6 +11,14 @@ class DishController extends AppController
     const SUPPORTED_TYPES = ["image/png", "image/jpeg"];
     const UPLOAD_DIRECTORY = "/../public/upload/";
     private $messages = [];
+
+    private  $dishRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->dishRepository = new DishRepository();
+    }
 
     public function addDish()
     {
@@ -19,8 +29,9 @@ class DishController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']["name"]
             );
             $image_url = self::UPLOAD_DIRECTORY.$_FILES['file']["name"];
-            $dish = new Dish($_POST['title'],$_POST['description-text'],$image_url,$_POST['amount'],$_POST['time']);
+            $dish = new Dish($_POST['title'],$_POST['description-text'],$image_url,$_POST['amount'],$_POST['time'], $_POST['level']);
 
+            $this->dishRepository->addDish($dish);
             return $this ->render("dish",["messages" => $this ->messages, 'dish'=>$dish]);
         }
 
@@ -40,5 +51,12 @@ class DishController extends AppController
         }
 
         return true;
+    }
+
+
+    public function dishes(){
+        $dishes = $this -> dishRepository -> getDishes();
+        $this->render('dishes',['dishes' => $dishes]);
+
     }
 }

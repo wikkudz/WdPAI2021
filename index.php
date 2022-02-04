@@ -9,7 +9,7 @@ $pth = parse_url($pth, PHP_URL_PATH);
 
 Routing::get('','DefaultController');
 
-Routing::get('mainpage','DefaultController');
+Routing::get('dishes','DishController');
 Routing::get('friends', 'DefaultController');
 Routing::get('dish', 'DefaultController');
 Routing::post('addDish', 'DishController');

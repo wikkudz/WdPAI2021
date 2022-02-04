@@ -138,8 +138,8 @@ section.recipes{
     width: 40vw;
     margin-left: 1vw;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    display: grid;
-    /*display: none;*/
+    /*display: grid;*/
+    display: none;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;

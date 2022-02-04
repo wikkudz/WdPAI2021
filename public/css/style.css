@@ -253,6 +253,6 @@ header{
 
 .fa-plus:before {
     content: "\f067";
-    font-size: 8em;
+    font-size: 8vh;
     color: #DF861D;
 }

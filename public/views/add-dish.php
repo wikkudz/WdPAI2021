@@ -35,8 +35,8 @@
     </header>
     <main>
         <div class="photo">
-            <input type="file" name="file">
             <button class="button2" type="submit"><i class="fas fa-image"></i></button>
+            <input type="file" name="file">
         </div>
         <div class="ingredients">
             <div class="ingredients-title">
@@ -58,10 +58,19 @@
             <div class="description-title">
                 Sposob przygotowania
             </div>
-            <textarea rows="2" cols="20" name="description-text" wrap="hard">
+            <textarea rows="5" name="description-text" wrap="hard">
 
             </textarea>
-            <button type="submit" class="addstep"><span>Dodaj krok</span></button>
+            <div class="difficulty-lvl">
+                Poziom trudnosci
+                <input list="difficulty" name="level">
+                <datalist id="difficulty">
+                    <option value="Latwy">
+                    <option value="Sredni">
+                    <option value="Trudny">
+                </datalist>
+            </div>
+
         </div>
     </main>
     <nav>

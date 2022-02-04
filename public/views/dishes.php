@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/recipes.css">
     <script src="https://kit.fontawesome.com/5b854a05a2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <script type="text/javascript" src="./public/js/dishes.js" defer></script>
     <title>Mmeal | Main page</title>
 </head>
 <body>
@@ -23,16 +25,22 @@
         <main>
             <header>
                 <div class="maintitle">
-                    Przepisy dnia
+                    Przepisy
                 </div>
                 <i class="fas fa-plus"></i>
     
             </header>
             <section class="recipes">
                 <?php foreach($dishes as $dish): ?>
-
-                <div id="recipe-1">
+                <div id = '<?= $dish -> getId()?>'>
+<!--                    <img src="--><?//= $dish -> getImage()?><!--">-->
+                    <script type="text/javascript">
+                        document.getElementById(<?= $dish -> getId()?>).style.backgroundImage = "url('<?= $dish -> getImage()?>')";
+                        document.getElementById(<?= $dish -> getId()?>).style.borderRadius = "2em";
+                        document.getElementById(<?= $dish -> getId()?>).style.objectFit = "cover";
+                    </script>
                     <div class="reciepe-background">
+
                         <div class='recipe-title'>
                             <?= $dish -> getTitle()?>
                         </div>
@@ -66,12 +74,12 @@
                             </div>
 
                         </div>
-                        </img>
+                    </img>
+
 
                     </div>
                     </div>
-<!--                <div>Zupa pomidorowa</div>-->
-<!--                <div>Spaghetti</div>-->
+<!--                To wkleiłem do template wiec jak bede cos zmienial to tam tez-->
                 <?php endforeach; ?>
             </section>
         </main>
@@ -90,4 +98,46 @@
         </nav>
     </div>
 </body>
+
+<template id="dish-template">
+    <div id="">
+        <div class="reciepe-background">
+            <div class='recipe-title'>
+            </div>
+            <div class="recipe-info">
+                <div class="rate">
+                    <div class="rate-number">
+                        4,8
+                    </div>
+                </div>
+                <div class='level'>
+                    <div class="level-text">POZIOM</div>
+                    <div class="difficulty-level">0</div>
+
+                </div>
+                <div class = "price">
+                    <div class = "price-info">CENA</div>
+                    <div class = "price-value">8zl</div>
+
+                </div>
+
+                <div class = "time">
+                    0
+                    min
+                    <i class="far fa-clock"></i>
+
+                </div>
+
+                <div class = "user">
+                    user
+                    <i class="fas fa-user"></i>
+                </div>
+
+            </div>
+            </img>
+
+        </div>
+    </div>
+</template>
+
 </html>

@@ -38,6 +38,18 @@ class DishController extends AppController
         $this ->render("add-dish", ["messages" => $this ->messages, 'dish']);
     }
 
+    public function search()
+    {
+
+    }
+
+    public function dishes()
+    {
+        $dishes = $this -> dishRepository -> getDishes();
+        $this->render('dishes',['dishes' => $dishes]);
+
+    }
+
     private function validate(array $file): bool
     {
         if($file['size'] > self::MAX_FILE_SIZE){
@@ -54,9 +66,7 @@ class DishController extends AppController
     }
 
 
-    public function dishes(){
-        $dishes = $this -> dishRepository -> getDishes();
-        $this->render('dishes',['dishes' => $dishes]);
 
-    }
+
+
 }

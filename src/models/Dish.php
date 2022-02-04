@@ -8,10 +8,13 @@ class Dish
     private $amount;
     private $time;
     private $lvl;
+    private static $nextId = 0;
+    private $id;
 
-
-
-//    private $ingredients;
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
 
     public function __construct($title, $description,  $image,$amount,$time, $lvl)
@@ -22,6 +25,8 @@ class Dish
         $this->amount = $amount;
         $this->time = $time;
         $this->lvl=$lvl;
+        $this->id = self::$nextId;
+        self::$nextId++;
     }
 
 

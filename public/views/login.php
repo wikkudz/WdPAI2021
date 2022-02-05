@@ -8,7 +8,10 @@
     <div class="container">
         <div class="logo">
             <img src="/public/img/logo.svg">
-            <button class="button" style="vertical-align:middle" type="submit"><span>REGISTER </span></button>
+            <a href="http://localhost:8080/register">
+                <button class="button" style="vertical-align:middle" type="submit"><span>REGISTER </span></button>
+            </a>
+
         </div>
             <div class = "login-container">
                 <form action="login" method="POST">

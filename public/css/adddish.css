@@ -239,7 +239,7 @@ nav{
     color: #FFFFFF;
 }
 
-.difficulty-lvl > input{
+select{
     font-family: "Bernard MT";
     font-size: 4vh;
     color: #DF861D;
@@ -249,5 +249,19 @@ nav{
      content: "\f067";
      color: #ffff;
      padding-left: 1vw;
+}
+
+#ingredients-button{
+    background-color: transparent;
+    border: none;
+}
+.input-div{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.input-div > input{
+    width: 6vw;
 }
 

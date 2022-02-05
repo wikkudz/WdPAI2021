@@ -25,7 +25,7 @@ class DishRepository extends Repository
             $dish['title'],
             $dish['description'],
             $dish['image'],
-            $dish['amount'],
+            $dish['portions'],
             $dish['time'],
             $dish['difficulty']
         );
@@ -33,13 +33,13 @@ class DishRepository extends Repository
 
     public function addDish(Dish $dish): void
     {
+        session_start();
         $date = new DateTime();
         $stmt = $this -> database->connect()->prepare('
             INSERT INTO recipes (title, description, portions, time, created_at, users_id, image, difficulty)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ');
 
-        $assignedById = 1;
 
         $stmt->execute([
             $dish->getTitle(),
@@ -47,7 +47,7 @@ class DishRepository extends Repository
             $dish->getAmount(),
             $dish->getTime(),
             $date->format('Y-m-d'),
-            $assignedById,
+            $_SESSION['id'],
             $dish->getImage(),
             $dish->getLvl()
         ]);
@@ -78,12 +78,14 @@ class DishRepository extends Repository
         return $result;
     }
 
+
+
     public function getDishByTitle(string $searchString)
     {
         $searchString = '%'.strtolower($searchString).'%';
 
         $stmt = $this -> database->connect()->prepare('
-            SELECT * FROM recipes WHERE LOWER(title) LIKE :search
+            SELECT * FROM recipes WHERE LOWER(title) LIKE :search OR LOWER(description) LIKE :search
         ');
 
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);

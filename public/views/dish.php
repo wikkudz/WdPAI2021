@@ -22,22 +22,13 @@
     <main>
         <div class="photo">
             <img src = "<?= $dish -> getImage() ?>">
-
-<!--            <div class="shadow">-->
-<!---->
-<!--                                <div class="rate">-->
-<!--                                    <div class="rate-number">-->
-<!--                                        4,8-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--            </div>-->
         </div>
         <div class="ingredients">
             <div class="ingredients-title">
                 Skladniki
             </div>
             <div class="ingredients-list">
-
+                <?= $dish -> getId() ?>
             </div>
             <div class="portions">
                 Ilosc porcji: <?= $dish -> getAmount() ?>

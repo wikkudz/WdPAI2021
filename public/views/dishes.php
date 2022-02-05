@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="public/css/recipes.css">
     <script src="https://kit.fontawesome.com/5b854a05a2.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
-    <script type="text/javascript" src="./public/js/dishes.js" defer></script>
     <title>Mmeal | Main page</title>
 </head>
 <body>
@@ -31,7 +30,10 @@
     
             </header>
             <section class="recipes">
+
                 <?php foreach($dishes as $dish): ?>
+
+                <a href="http://localhost:8080/dish?id=<?= $dish -> getId()?>">
                 <div id = '<?= $dish -> getId()?>'>
 <!--                    <img src="--><?//= $dish -> getImage()?><!--">-->
                     <script type="text/javascript">
@@ -79,6 +81,8 @@
 
                     </div>
                     </div>
+
+                </a>
 <!--                To wkleiłem do template wiec jak bede cos zmienial to tam tez-->
                 <?php endforeach; ?>
             </section>
@@ -100,7 +104,7 @@
 </body>
 
 <template id="dish-template">
-    <div id="">
+    <div class="recipe-template">
         <div class="reciepe-background">
             <div class='recipe-title'>
             </div>
@@ -122,10 +126,8 @@
                 </div>
 
                 <div class = "time">
-                    0
-                    min
-                    <i class="far fa-clock"></i>
 
+                    <i class="far fa-clock"></i>
                 </div>
 
                 <div class = "user">

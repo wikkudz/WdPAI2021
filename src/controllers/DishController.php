@@ -22,6 +22,7 @@ class DishController extends AppController
 
     public function addDish()
     {
+        session_start();
 
         if($this->isPost() && is_uploaded_file($_FILES['file']["tmp_name"]) && $this -> validate($_FILES["file"])){
             move_uploaded_file(
@@ -29,7 +30,14 @@ class DishController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']["name"]
             );
             $image_url = self::UPLOAD_DIRECTORY.$_FILES['file']["name"];
-            $dish = new Dish($_POST['title'],$_POST['description-text'],$image_url,$_POST['amount'],$_POST['time'], $_POST['level']);
+            $dish = new Dish(
+                $_POST['title'],
+                $_POST['description-text'],
+                $image_url,
+                $_POST['amount'],
+                $_POST['time'],
+                $_POST['level']
+            );
 
             $this->dishRepository->addDish($dish);
             return $this ->render("dish",["messages" => $this ->messages, 'dish'=>$dish]);
@@ -40,7 +48,16 @@ class DishController extends AppController
 
     public function search()
     {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        if($contentType === "application/json"){
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
 
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->dishRepository->getDishByTitle($decoded['search']));
+        }
     }
 
     public function dishes()

@@ -5,7 +5,7 @@ search.addEventListener("keyup", function (event){
     if(event.key === "Enter"){
         event.preventDefault();
 
-        const date = {search: this.value};
+        const data = {search: this.value};
 
         fetch('/search', {
             method: 'POST',
@@ -36,5 +36,19 @@ function createDish(dish) {
 
     const clone = template.content.cloneNode(true);
 
-    const image = clone.querySelector
+    const image = dish.image;
+
+    clone.querySelector(".recipe-template").style.backgroundImage= 'url(image)';
+
+
+    const title =  clone.querySelector('.recipe-title');
+    title.innerHTML = dish.title;
+    const difficulty = clone.querySelector('.difficulty-level');
+    difficulty.innerHTML = dish.difficulty;
+
+
+    const time = clone.querySelector('.time');
+    time.innerHTML = dish.time + "min";
+
+    dishContainer.appendChild(clone);
 }

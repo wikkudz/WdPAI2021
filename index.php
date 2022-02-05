@@ -15,7 +15,7 @@ Routing::get('dish', 'DefaultController');
 Routing::post('addDish', 'DishController');
 Routing::post('login','SecurityController');
 Routing::post('register','SecurityController');
-Routing::post('searchDish', 'DishController');
+Routing::post('search', 'DishController');
 
 Routing::run($pth);
 

@@ -17,7 +17,7 @@ class Dish
     }
 
 
-    public function __construct($title, $description,  $image,$amount,$time, $lvl)
+    public function __construct($title, $description, $image,$amount,$time, $lvl)
     {
         $this->title = $title;
         $this->description = $description;

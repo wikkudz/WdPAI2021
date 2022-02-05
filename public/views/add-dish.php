@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/adddish.css">
     <script src="https://kit.fontawesome.com/5b854a05a2.js" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="./public/js/dish.js" defer></script>
     <title>Mmeal | Add dish</title>
 
 </head>
@@ -44,8 +44,17 @@
             </div>
             <div class="ingredients-list">
                 <div class = "addingredients">
-                    <i class="fas fa-plus"></i>
-                    <input name="newtitle" type="text" placeholder = "WPISZ NAZWE">
+                    <div class="input-div">
+                        <button id="ingredients-button"><i class="fas fa-plus" action="on"></i></button>
+
+                        <input name="ingredient-name" type="text" placeholder = "NAZWA">
+                        <input name="weight" type="text" placeholder="ILOSC">
+                        <input name="price" type="number" min="0" max="10000" step = "0.01" placeholder="cena">zl
+                    </div>
+
+                    <ul id="list">
+                        <li>jajko</li>
+                    </ul>
                 </div>
 
             </div>
@@ -63,12 +72,12 @@
             </textarea>
             <div class="difficulty-lvl">
                 Poziom trudnosci
-                <input list="difficulty" name="level">
-                <datalist id="difficulty">
-                    <option value="Latwy">
-                    <option value="Sredni">
-                    <option value="Trudny">
-                </datalist>
+<!--                <input list="difficulty" name="level">-->
+                <select id="difficulty" name="level">
+                    <option value="Latwy">Latwy</option>
+                    <option value="Sredni">Sredni</option>
+                    <option value="Trudny">Trudny</option>
+                </select>
             </div>
 
         </div>

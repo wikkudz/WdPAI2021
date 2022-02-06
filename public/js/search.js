@@ -16,8 +16,6 @@ search.addEventListener("keyup", function (event){
         }).then(function (response){
             return response.json();
         }).then(function(dishes){
-
-
             dishContainer.innerHTML = "",
             loadDishes(dishes)
         })

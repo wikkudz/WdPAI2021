@@ -3,6 +3,9 @@
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Dish.php';
 require_once __DIR__.'/../repository/DishRepository.php';
+require_once __DIR__.'/../repository/IngredientRepository.php';
+require_once __DIR__.'/../models/Ingredient.php';
+
 
 
 class DishController extends AppController
@@ -31,6 +34,7 @@ class DishController extends AppController
             );
             $image_url = self::UPLOAD_DIRECTORY.$_FILES['file']["name"];
             $dish = new Dish(
+                -1,
                 $_POST['title'],
                 $_POST['description-text'],
                 $image_url,
@@ -39,8 +43,11 @@ class DishController extends AppController
                 $_POST['level']
             );
 
+
             $this->dishRepository->addDish($dish);
-            return $this ->render("dish",["messages" => $this ->messages, 'dish'=>$dish]);
+
+
+            return $this ->render("add-ingredients",['dish'=>$dish]);
         }
 
         $this ->render("add-dish", ["messages" => $this ->messages, 'dish']);
@@ -63,6 +70,7 @@ class DishController extends AppController
     public function dishes()
     {
         $dishes = $this -> dishRepository -> getDishes();
+//        var_dump($dishes);
         $this->render('dishes',['dishes' => $dishes]);
 
     }

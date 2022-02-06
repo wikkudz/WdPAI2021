@@ -2,6 +2,8 @@
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/Dish.php';
+require_once __DIR__.'/../repository/IngredientRepository.php';
+require_once __DIR__.'/../models/Ingredient.php';
 
 class DishRepository extends Repository
 {
@@ -21,14 +23,19 @@ class DishRepository extends Repository
             //TODO dokonczyc
         }
 
-        return new Dish(
+        $test = new Dish(
+            $dish['id'],
             $dish['title'],
             $dish['description'],
             $dish['image'],
             $dish['portions'],
             $dish['time'],
-            $dish['difficulty']
+            $dish['difficulty'],
         );
+
+        $test -> setId($dish['id']);
+        var_dump($test);
+        return $test;
     }
 
     public function addDish(Dish $dish): void
@@ -51,6 +58,23 @@ class DishRepository extends Repository
             $dish->getImage(),
             $dish->getLvl()
         ]);
+
+        $stmt2 = $this->database->connect()->prepare('
+        SELECT * FROM public.recipes WHERE title = :title
+        ');
+
+        $title = $dish->getTitle();
+
+        $stmt2->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt2->execute();
+
+        $dish2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+
+        $dish ->setId($dish2['id']);
+
+//        echo($dish['id']);
+//        $test -> setId($dish['id']);
+//        echo($test -> getId());
     }
 
     public function getDishes(): array
@@ -66,6 +90,7 @@ class DishRepository extends Repository
 
         foreach ($dishes as $dish){
             $result[]= new Dish(
+                $dish['id'],
                 $dish['title'],
                 $dish['description'],
                 $dish['image'],
@@ -73,6 +98,7 @@ class DishRepository extends Repository
                 $dish['time'],
                 $dish['difficulty']
             );
+
         }
 
         return $result;

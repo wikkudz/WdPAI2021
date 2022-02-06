@@ -8,8 +8,14 @@ class Dish
     private $amount;
     private $time;
     private $lvl;
-    private static $nextId = 0;
+//    private static $nextId = 0;
     private $id;
+
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     public function getId(): int
     {
@@ -17,16 +23,17 @@ class Dish
     }
 
 
-    public function __construct($title, $description, $image,$amount,$time, $lvl)
+    public function __construct($id, $title, $description, $image,$amount,$time, $lvl)
     {
+        $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->amount = $amount;
         $this->time = $time;
         $this->lvl=$lvl;
-        $this->id = self::$nextId;
-        self::$nextId++;
+//        $this->id = self::$nextId;
+//        self::$nextId++;
     }
 
 

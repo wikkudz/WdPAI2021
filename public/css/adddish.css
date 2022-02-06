@@ -74,11 +74,12 @@ main{
     align-items: center;
 }
 
-.ingredients{
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-}
+/*.ingredients{*/
+/*    width: 30vw;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
 .portions{
     font-family: "Bernard MT";
     font-size: 5vh;
@@ -87,12 +88,12 @@ main{
     color: #DF861D;
     margin-left: 1vw;
 }
-.ingredients-title{
-    margin-left: 1vw;
-    text-align: left;
-    font: normal normal normal 5vh Bernard MT;
-    color: #DF861D;
-}
+/*.ingredients-title{*/
+/*    margin-left: 1vw;*/
+/*    text-align: left;*/
+/*    font: normal normal normal 5vh Bernard MT;*/
+/*    color: #DF861D;*/
+/*}*/
 
 .description{
     width: 40vw;
@@ -259,9 +260,35 @@ select{
     display: flex;
     align-items: center;
     gap: 1vw;
+    font-family: "Bernard MT";
+    color: #FFFFFF;
 }
 
 .input-div > input{
     width: 6vw;
+}
+
+ul{
+    overflow-y: auto;
+    margin-left: 1vw;
+    background: #F6DDC0 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    height: 50vh;
+
+}
+ul > li{
+    margin-left: 3vw;
+    font-family: "Bernard MT";
+    font-size: 3vh;
+    color: #000000;
+}
+
+.no-valid{
+    z-index: 100;
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
 }
 

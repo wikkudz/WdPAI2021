@@ -2,15 +2,13 @@
 
 class Ingredient
 {
-    private $id;
     private $recipeId;
     private $name;
     private $weight;
     private $price;
 
-    public function __construct(string $id, string $recipeId, string $name, string $weight, string $price)
+    public function __construct(string $name, string $weight, string $price, string $recipeId = '999' )
     {
-        $this->id = $id;
         $this->recipeId = $recipeId;
         $this->name = $name;
         $this->weight = $weight;

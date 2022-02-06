@@ -32,7 +32,6 @@
             <section class="recipes">
 
                 <?php foreach($dishes as $dish): ?>
-
                 <a href="http://localhost:8080/dish?id=<?= $dish -> getId()?>">
                 <div id = '<?= $dish -> getId()?>'>
 <!--                    <img src="--><?//= $dish -> getImage()?><!--">-->

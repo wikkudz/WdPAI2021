@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<form action = "addDish" method="POST" enctype="multipart/form-data">
+<form action = "addDish" method="POST" enctype="multipart/form-data" id="add-dish-form">
     <?php if(isset($messages)){
         foreach ($messages as $message){
             echo $message;
@@ -39,25 +39,6 @@
             <input type="file" name="file">
         </div>
         <div class="ingredients">
-            <div class="ingredients-title">
-                Skladniki
-            </div>
-            <div class="ingredients-list">
-                <div class = "addingredients">
-                    <div class="input-div">
-                        <button id="ingredients-button"><i class="fas fa-plus" action="on"></i></button>
-
-                        <input name="ingredient-name" type="text" placeholder = "NAZWA">
-                        <input name="weight" type="text" placeholder="ILOSC">
-                        <input name="price" type="number" min="0" max="10000" step = "0.01" placeholder="cena">zl
-                    </div>
-
-                    <ul id="list">
-                        <li>jajko</li>
-                    </ul>
-                </div>
-
-            </div>
             <div class="portions">
                 Ilosc porcji
                 <input name="amount" type="number" min="0" max="100" value="1">
@@ -67,7 +48,7 @@
             <div class="description-title">
                 Sposob przygotowania
             </div>
-            <textarea rows="5" name="description-text" wrap="hard">
+            <textarea rows="5" name="description-text">
 
             </textarea>
             <div class="difficulty-lvl">
@@ -83,7 +64,7 @@
         </div>
     </main>
     <nav>
-        <button class="button1" style="vertical-align:middle" type="submit"><span> DODAJ&nbsp; </span></button>
+        <button class="button1" style="vertical-align:middle" type="submit" form="add-dish-form"><span> DODAJ&nbsp; </span></button>
 
         <div class="icons-bar">
             <i class="fas fa-user-friends"></i>

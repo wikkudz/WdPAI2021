@@ -2,6 +2,8 @@
 
 ##Uruchomienie projektu
 Aby uruchomić aplikacje należy użyć Dockera oraz polecenia docker-compose up, które wpisujemy w konsoli. Aplikacja uruchamia się na lokalnym serwerze http://localhost:8080.
+
+
 ##Technologie
 *PHP
 *HTML

@@ -22,22 +22,18 @@
     <main>
         <div class="photo">
             <img src = "<?= $dish -> getImage() ?>">
-
-<!--            <div class="shadow">-->
-<!---->
-<!--                                <div class="rate">-->
-<!--                                    <div class="rate-number">-->
-<!--                                        4,8-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--            </div>-->
         </div>
         <div class="ingredients">
             <div class="ingredients-title">
                 Skladniki
             </div>
             <div class="ingredients-list">
-
+                <?php foreach($ingredients as $ingredient):?>
+                <?= $ingredient -> getName() ?>
+                (<?= $ingredient -> getWeight() ?>)
+                <?= $ingredient -> getPrice() ?>zl
+                <br>
+                <?php endforeach; ?>
             </div>
             <div class="portions">
                 Ilosc porcji: <?= $dish -> getAmount() ?>
@@ -68,7 +64,9 @@
         <div class="icons-bar">
             <i class="fas fa-user-friends"></i>
             <i class="fas fa-user"></i>
-            <img src="public/img/logo.svg">
+            <a href="http://localhost:8080/dishes">
+                <img class="mainlogo" src="public/img/logo.svg" href="http://localhost:8080/dishes">
+            </a>
         </div>
     </nav>
 </body>

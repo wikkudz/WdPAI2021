@@ -64,7 +64,7 @@ form{
     justify-content: space-around;
     align-items: center;
     width: 30vw;
-    HEIGHT: 40vh;
+    HEIGHT: 60vh;
     background: rgba(0, 0, 0, 0.5) 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 6px #00000029;
     border-radius: 32px;
@@ -74,9 +74,15 @@ form{
     width: 75vw;
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.logo > button{
+    position: absolute;
+    bottom: 10vh;
+
 }
 
 button{
@@ -154,6 +160,7 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    z-index: -2;
 }
 
 nav{
@@ -163,7 +170,6 @@ nav{
     display: flex;
     align-self: flex-end;
     justify-content:space-between;
-    margin-top: 2vh;
 }
 
 main{
@@ -188,8 +194,8 @@ main{
     padding-right: 1vw;
 }
 
-.icons-bar > img{
-    width: 20%;
+.icons-bar> a > img{
+    width: 100%;
 }
 
 .searchbar{
@@ -212,6 +218,13 @@ main{
     color: #DF861D;
 }
 
+.icons-bar> a > i{
+    font-size: 6vh;
+    padding-right: 0.5em;
+    color: #DF861D;
+}
+
+
 .searchbar > i{
     font-size: 5vh;
     color: #DF861D;
@@ -220,7 +233,7 @@ main{
 }
 
 input.search{
-    font: normal normal normal 2.5em Segoe UI;
+    font: normal normal normal 1.5em Segoe UI;
     letter-spacing: 0.1em;
     align-items: center;
     text-align: left;
@@ -255,4 +268,39 @@ header{
     content: "\f067";
     font-size: 8vh;
     color: #DF861D;
+}
+
+form[name="register"]{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    HEIGHT: 90vh;
+    background: rgba(0, 0, 0, 0.5) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 32px;
+}
+
+form[name="register"] > input{
+    font: normal normal normal 20px/27px Segoe UI;
+    font-style: Segoe UI;
+    letter-spacing: 2px;
+    color: #DF861D;
+    text-align: center;
+    width: 40vw;
+    height: 3vh;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #DF861D;
+    padding: 1em;
+    margin: 1em;
+}
+
+.no-valid{
+    z-index: 100;
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
 }

@@ -115,7 +115,12 @@ header{
     content: "\f234";
     font-size: 8vh;
     color: #DF861D;
+}
 
+.fa-sign-out-alt:before {
+    content: "\f234";
+    font-size: 8vh;
+    color: #DF861D;
 }
 
 section.recipes{

@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/recipes.css">
     <script src="https://kit.fontawesome.com/5b854a05a2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>Mmeal | Main page</title>
 </head>
 <body>
@@ -23,16 +24,26 @@
         <main>
             <header>
                 <div class="maintitle">
-                    Przepisy dnia
+                    Przepisy
                 </div>
-                <i class="fas fa-plus"></i>
+                <a href="http://localhost:8080/addDish"><i class="fas fa-plus"></i></a>
+
+
     
             </header>
             <section class="recipes">
-                <?php foreach($dishes as $dish): ?>
 
-                <div id="recipe-1">
+                <?php foreach($dishes as $dish): ?>
+                <a href="http://localhost:8080/dish?id=<?= $dish -> getId()?>">
+                <div id = '<?= $dish -> getId()?>'>
+<!--                    <img src="--><?//= $dish -> getImage()?><!--">-->
+                    <script type="text/javascript">
+                        document.getElementById(<?= $dish -> getId()?>).style.backgroundImage = "url('<?= $dish -> getImage()?>')";
+                        document.getElementById(<?= $dish -> getId()?>).style.borderRadius = "2em";
+                        document.getElementById(<?= $dish -> getId()?>).style.backgroundSize = "cover";
+                    </script>
                     <div class="reciepe-background">
+
                         <div class='recipe-title'>
                             <?= $dish -> getTitle()?>
                         </div>
@@ -43,13 +54,13 @@
                                 </div>
                             </div>
                             <div class='level'>
-                                <div class="level-text">POZIOM</div>
+                                <div class="level-text">POZIOM:</div>
                                 <div class="difficulty-level"><?= $dish -> getLvl()?></div>
 
                             </div>
                             <div class = "price">
                                 <div class = "price-info">CENA</div>
-                                <div class = "price-value">8zl</div>
+                                <div class = "price-value"><?= $dish ->getPrice()?>zl</div>
 
                             </div>
 
@@ -61,17 +72,18 @@
                             </div>
 
                             <div class = "user">
-                                user
+                                <?= $dish ->getUser()?>
                                 <i class="fas fa-user"></i>
                             </div>
 
                         </div>
-                        </img>
+                    </img>
+
 
                     </div>
                     </div>
-<!--                <div>Zupa pomidorowa</div>-->
-<!--                <div>Spaghetti</div>-->
+
+                </a>
                 <?php endforeach; ?>
             </section>
         </main>
@@ -84,10 +96,56 @@
             
             <div class="icons-bar">
                 <i class="fas fa-user-friends"></i>
-                <i class="fas fa-user"></i>
-                <img src="public/img/logo.svg">
+                <a href="http://localhost:8080/profile">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="http://localhost:8080/dishes">
+                    <img class="mainlogo" src="public/img/logo.svg" href="http://localhost:8080/dishes">
+                </a>
+
             </div>
         </nav>
     </div>
 </body>
+
+<template id="dish-template">
+    <a class="link">
+    <div class="recipe-template">
+        <div class="reciepe-background">
+            <div class='recipe-title'>
+            </div>
+            <div class="recipe-info">
+                <div class="rate">
+                    <div class="rate-number">
+                        4,8
+                    </div>
+                </div>
+                <div class='level'>
+                    <div class="level-text">POZIOM:</div>
+                    <div class="difficulty-level"></div>
+
+                </div>
+                <div class = "price">
+                    <div class = "price-info">CENA</div>
+                    <div class = "price-value"></div>
+
+                </div>
+
+                <div class = "time">
+
+                    <i class="far fa-clock"></i>
+                </div>
+
+                <div class = "user">
+                    <i class="fas fa-user"></i>
+                </div>
+
+            </div>
+            </img>
+
+        </div>
+    </div>
+    </a>
+</template>
+
 </html>

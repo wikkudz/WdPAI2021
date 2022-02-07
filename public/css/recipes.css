@@ -1,22 +1,31 @@
 section.recipes{
     /*width: 100vw;*/
-    height: 76vh;
+    height: 78vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2vw;
     padding-left: 2em;
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     display: flex;
+
 }
-.section.recipes::-webkit-scrollbar {    display: none;}
+::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+    border: 1px solid #d5d5d5;
+}
+
 #recipe-1{
     border-radius: 2em;
-    background-image: url('../img/ryzzkurczakiem.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 76vh;
+    width: 30vw;
 }
+
 
 .reciepe-background{
     background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
@@ -26,12 +35,14 @@ section.recipes{
     flex-direction: column;
     justify-content: space-between;
     height: 76vh;
+    width: 26vw;
 
 }
 
 .recipe-title{
     text-align: center;
     font: normal normal normal 6em Bernard MT;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     letter-spacing: 0px;
     color: #FFFFFF;
     margin-top: 1vh;
@@ -127,6 +138,11 @@ section.recipes{
     grid-row: 2/3;
     font: normal normal normal 1.5em Bernard MT;
     color: #DF861D;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1vw;
+    padding-left: 1vw;
 }
 
 .filter{
@@ -172,5 +188,16 @@ section.recipes{
 }
 .filter-button {
     grid-area: 3 / 4 / 6 / 6;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+.icons-bar > a{
+    width: 5vw;
+    text-decoration: none;
+    right: 0;
 }
 

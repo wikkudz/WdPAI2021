@@ -14,6 +14,10 @@ Routing::get('friends', 'DefaultController');
 Routing::get('dish', 'DefaultController');
 Routing::post('addDish', 'DishController');
 Routing::post('login','SecurityController');
+Routing::post('register','SecurityController');
+Routing::post('search', 'DishController');
+Routing::post('addIngredient', 'IngredientController');
+Routing::get('profile','DefaultController');
 
 Routing::run($pth);
 

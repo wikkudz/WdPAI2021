@@ -74,11 +74,12 @@ main{
     align-items: center;
 }
 
-.ingredients{
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-}
+/*.ingredients{*/
+/*    width: 30vw;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
 .portions{
     font-family: "Bernard MT";
     font-size: 5vh;
@@ -87,12 +88,12 @@ main{
     color: #DF861D;
     margin-left: 1vw;
 }
-.ingredients-title{
-    margin-left: 1vw;
-    text-align: left;
-    font: normal normal normal 5vh Bernard MT;
-    color: #DF861D;
-}
+/*.ingredients-title{*/
+/*    margin-left: 1vw;*/
+/*    text-align: left;*/
+/*    font: normal normal normal 5vh Bernard MT;*/
+/*    color: #DF861D;*/
+/*}*/
 
 .description{
     width: 40vw;
@@ -119,7 +120,7 @@ main{
 }
 
 input[type="number" i]{
-    font: 4vh Bernard MT;
+    font: 2.5vh Bernard MT;
     color: #DF861D;
 }
 
@@ -202,8 +203,8 @@ nav{
     padding-right: 1vw;
 }
 
-.icons-bar > img{
-    width: 20%;
+.icons-bar >a> img{
+    width: 100%;
 
 }
 
@@ -239,15 +240,83 @@ nav{
     color: #FFFFFF;
 }
 
-.difficulty-lvl > input{
+select{
     font-family: "Bernard MT";
     font-size: 4vh;
     color: #DF861D;
 }
 
 .fa-plus:before {
+    display: flex;
+    justify-content: center;
      content: "\f067";
-     color: #ffff;
+     color: #FFFFFF;
      padding-left: 1vw;
+}
+
+#ingredients-button{
+    background-color: transparent;
+    border: none;
+}
+
+.input-div{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    font-family: "Bernard MT";
+    color: #FFFFFF;
+}
+
+.input-div > input{
+    width: 6vw;
+}
+
+ul{
+    overflow-y: auto;
+    margin-left: 1vw;
+    background: #F6DDC0 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    height: 50vh;
+
+}
+ul > li{
+    margin-left: 3vw;
+    font-family: "Bernard MT";
+    font-size: 3vh;
+    color: #000000;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+.icons-bar > a{
+    width: 5vw;
+    text-decoration: none;
+    right: 0;
+}
+
+.ingredients-title{
+    display: flex;
+    margin-left: 1vw;
+    text-align: left;
+    font: normal normal normal 5vh Bernard MT;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.ingredients-list{
+    margin-left: 1vw;
+    background: #F6DDC0 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    height: 59vh;
+    width: 50vw;
+}
+
+.addingredients{
+    margin-left: 1vw;
 }
 

@@ -8,20 +8,21 @@ class Dish
     private $amount;
     private $time;
     private $lvl;
+    private $id;
+    private $user;
+    private $price;
 
-
-
-//    private $ingredients;
-
-
-    public function __construct($title, $description,  $image,$amount,$time, $lvl)
+    public function __construct($id, $title, $description, $image,$amount,$time, $lvl,$user,$price = "-1")
     {
+        $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->amount = $amount;
         $this->time = $time;
         $this->lvl=$lvl;
+        $this->user=$user;
+        $this->price = $price;
     }
 
 
@@ -85,17 +86,39 @@ class Dish
     {
         $this->lvl = $lvl;
     }
-//    public function getIngredients()
-//    {
-//        return $this->ingredients;
-//    }
-//
-//    /**
-//     * @param mixed $ingredients
-//     */
-//    public function setIngredients($ingredients)
-//    {
-//        $this->ingredients = $ingredients;
-//    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function setPrice($price): void
+    {
+        $this->price = $price;
+    }
+
+
+    public function getUser(): string
+    {
+        return $this->user;
+    }
+
+    public function setUser($user): void
+    {
+        $this->user = $user;
+    }
+
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+
 
 }

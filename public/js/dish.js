@@ -12,16 +12,7 @@ function addIngredient(){
 
     i = i+1;
     newDiv.classList.add("test");
-    input.appendChild(newDiv)
-    // const ingredientName = document.querySelector('input[name="ingredient-name"]');
-    // const ingredientWeight = document.querySelector('input[name="weight"]');
-    // const ingredientPrice = document.querySelector('input[name="price"]');
-
-    // const node = document.createElement("li");
-    // const textnode = document.createTextNode(ingredientName.value+" " + ingredientWeight.value+" " + ingredientPrice.value + " zl");
-    // node.appendChild(textnode);
-    //
-    // document.getElementById("list").appendChild(node);
+    input.appendChild(newDiv);
 
 
 }

@@ -51,11 +51,10 @@ class IngredientRepository extends Repository
             INSERT INTO ingredients (name, weight, price, recipe_id)
             VALUES (?, ?, ?, ?)
         ');
-
             $stmt->execute([
                 $ingredient->getName(),
                 $ingredient->getWeight(),
-                $ingredient->getPrice(),
+                str_replace(",",".",$ingredient->getPrice()),
                 (int)$ingredient->getRecipeId()
             ]);
         }

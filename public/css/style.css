@@ -170,7 +170,6 @@ nav{
     display: flex;
     align-self: flex-end;
     justify-content:space-between;
-    margin-top: 2vh;
 }
 
 main{
@@ -234,7 +233,7 @@ main{
 }
 
 input.search{
-    font: normal normal normal 2.5em Segoe UI;
+    font: normal normal normal 1.5em Segoe UI;
     letter-spacing: 0.1em;
     align-items: center;
     text-align: left;

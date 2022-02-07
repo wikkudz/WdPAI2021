@@ -28,7 +28,6 @@ class IngredientController extends AppController
                     $_POST['price'.$i],
                     $_POST['recipe-id']
                 );
-                echo ($_POST['ingredient-name'.$i]);
                 $i++;
             }
             $this->ingredientRepository->addIngredients($ingredients);

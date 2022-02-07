@@ -26,12 +26,16 @@ class DishController extends AppController
     public function addDish()
     {
 
-        if($this->isPost() && is_uploaded_file($_FILES['file']["tmp_name"]) && $this -> validate($_FILES["file"])){
+        if(!isset($_COOKIE['userId']) && !isset($_COOKIE['userName']) && !isset($_COOKIE['userSurname'])){
+            $this->messages[] = 'You must be logged in!';
+            $this->render('login',["messages" => $this ->messages]);
+        }
+        if ($this->isPost() && is_uploaded_file($_FILES['file']["tmp_name"]) && $this->validate($_FILES["file"])) {
             move_uploaded_file(
                 $_FILES['file']["tmp_name"],
-                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']["name"]
+                dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']["name"]
             );
-            $image_url = self::UPLOAD_DIRECTORY.$_FILES['file']["name"];
+            $image_url = self::UPLOAD_DIRECTORY . $_FILES['file']["name"];
             $dish = new Dish(
                 -1,
                 $_POST['title'],
@@ -40,17 +44,18 @@ class DishController extends AppController
                 $_POST['amount'],
                 $_POST['time'],
                 $_POST['level'],
-                $_COOKIE['userName']." ".$_COOKIE['userSurname']
+                $_COOKIE['userName'] . " " . $_COOKIE['userSurname'],
+                "0"
             );
 
 
             $this->dishRepository->addDish($dish);
 
 
-            return $this ->render("add-ingredients",['dish'=>$dish]);
+            return $this->render("add-ingredients", ['dish' => $dish]);
         }
 
-        $this ->render("add-dish", ["messages" => $this ->messages, 'dish']);
+        $this->render("add-dish", ["messages" => $this->messages, 'dish']);
     }
 
     public function search()
@@ -71,8 +76,8 @@ class DishController extends AppController
 
     public function dishes()
     {
+
         $dishes = $this -> dishRepository -> getDishes();
-//        var_dump($dishes);
         $this->render('dishes',['dishes' => $dishes]);
 
     }

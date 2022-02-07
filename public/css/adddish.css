@@ -120,7 +120,7 @@ main{
 }
 
 input[type="number" i]{
-    font: 4vh Bernard MT;
+    font: 2.5vh Bernard MT;
     color: #DF861D;
 }
 
@@ -247,8 +247,10 @@ select{
 }
 
 .fa-plus:before {
+    display: flex;
+    justify-content: center;
      content: "\f067";
-     color: #ffff;
+     color: #FFFFFF;
      padding-left: 1vw;
 }
 
@@ -256,6 +258,7 @@ select{
     background-color: transparent;
     border: none;
 }
+
 .input-div{
     display: flex;
     align-items: center;
@@ -295,11 +298,25 @@ a{
     right: 0;
 }
 
-.no-valid{
-    z-index: 100;
-    border: 3px solid red;
-    border-radius: 1em;
-    box-shadow: 0 0 0.2em red;
-    outline: none;
+.ingredients-title{
+    display: flex;
+    margin-left: 1vw;
+    text-align: left;
+    font: normal normal normal 5vh Bernard MT;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.ingredients-list{
+    margin-left: 1vw;
+    background: #F6DDC0 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    height: 59vh;
+    width: 50vw;
+}
+
+.addingredients{
+    margin-left: 1vw;
 }
 

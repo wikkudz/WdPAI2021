@@ -7,6 +7,7 @@ require_once __DIR__.'/../repository/IngredientRepository.php';
 
 class DefaultController extends AppController{
 
+    private $messages = [];
     private $dishRepository;
 
     public function index()
@@ -20,6 +21,10 @@ class DefaultController extends AppController{
     }
 
     public function profile(){
+        if(!isset($_COOKIE['userId']) && !isset($_COOKIE['userName']) && !isset($_COOKIE['userSurname'])){
+            $this->messages[] = 'You must be logged in!';
+            $this->render('login',["messages" => $this ->messages]);
+        }
         $this->render('profile');
     }
     public function dish(){

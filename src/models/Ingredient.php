@@ -38,7 +38,7 @@ class Ingredient
         $this->weight = $weight;
     }
 
-    public function getPrice(): int
+    public function getPrice(): string
     {
         return $this->price;
     }

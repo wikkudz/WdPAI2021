@@ -1,15 +1,21 @@
 section.recipes{
     /*width: 100vw;*/
-    height: 76vh;
+    height: 78vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2vw;
     padding-left: 2em;
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     display: flex;
 
 }
-.section.recipes::-webkit-scrollbar {    display: none;}
+::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+    border: 1px solid #d5d5d5;
+}
+
 #recipe-1{
     border-radius: 2em;
     background-size: cover;
@@ -29,7 +35,7 @@ section.recipes{
     flex-direction: column;
     justify-content: space-between;
     height: 76vh;
-    width: 30vw;
+    width: 26vw;
 
 }
 
@@ -194,3 +200,4 @@ a{
     text-decoration: none;
     right: 0;
 }
+

@@ -27,6 +27,25 @@ class DishRepository extends Repository
 
         $dish2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 
+        $stmt3 = $this->database->connect()->prepare('
+        SELECT sum(price) FROM public.ingredients WHERE recipe_id = :recipe_id
+        ');
+
+        $stmt3->bindParam(':recipe_id', $dish['id'], PDO::PARAM_INT);
+        $stmt3->execute();
+
+        $price = $stmt3->fetch(PDO::FETCH_ASSOC);
+
+        $stmt4 = $this -> database->connect()->prepare('
+            UPDATE recipes SET price = :p where id = :recipe_id
+        ');
+
+        $stmt4->bindParam(':recipe_id', $dish['id'], PDO::PARAM_INT);
+        $stmt4->bindParam(':p', $price['sum'], PDO::PARAM_INT);
+
+        $stmt4->execute();
+
+
         if($dish == false){
             return null;
             //TODO dokonczyc
@@ -41,7 +60,8 @@ class DishRepository extends Repository
             $dish['portions'],
             $dish['time'],
             $dish['difficulty'],
-            $dish2['name']." ".$dish2['surname']
+            $dish2['name']." ".$dish2['surname'],
+            $price['sum']
         );
 
     }
@@ -63,7 +83,7 @@ class DishRepository extends Repository
             $date->format('Y-m-d'),
             $_COOKIE['userId'],
             $dish->getImage(),
-            $dish->getLvl()
+            $dish->getLvl(),
         ]);
 
         $stmt2 = $this->database->connect()->prepare('
@@ -106,6 +126,14 @@ class DishRepository extends Repository
 
             $dish2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 
+            $stmt3 = $this->database->connect()->prepare('
+                SELECT sum(price) FROM public.ingredients WHERE recipe_id = :recipe_id
+            ');
+
+            $stmt3->bindParam(':recipe_id', $dish['id'], PDO::PARAM_INT);
+            $stmt3->execute();
+
+
             $result[]= new Dish(
                 $dish['id'],
                 $dish['title'],
@@ -114,7 +142,8 @@ class DishRepository extends Repository
                 $dish['amount'],
                 $dish['time'],
                 $dish['difficulty'],
-                $dish2['name']." ".$dish2['surname']
+                $dish2['name']." ".$dish2['surname'],
+                $dish['price']
             );
 
         }
@@ -134,8 +163,22 @@ class DishRepository extends Repository
 
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
+        $dishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+        foreach ($dishes as $dish){
+            $stmt2 = $this->database->connect()->prepare('
+                SELECT * FROM public.users WHERE id = :id_user
+            ');
+
+            $stmt2->bindParam(':id_user', $dish['users_id'], PDO::PARAM_STR);
+            $stmt2->execute();
+            $user = $stmt2->fetch(PDO::FETCH_ASSOC);
+            $dish['users_id'] = $user['name'].$user["surname"];
+        }
+
+        return $dishes;
     }
 
 

@@ -27,14 +27,12 @@
         <div class="ingredients">
             <div class="ingredients-title">
                 Skladniki
+                <button id="ingredients-button" type="button" onclick="addIngredient()"><i class="fas fa-plus" action="on"></i></button>
             </div>
             <div class="ingredients-list">
                 <div class = "addingredients">
                     <div class="input-div">
-                            <button id="ingredients-button" type="button" onclick="addIngredient()"><i class="fas fa-plus" action="on"></i></button>
-<!--                            <input name="ingredient-name" type="text" placeholder = "NAZWA">-->
-<!--                            <input name="weight" type="text" placeholder="ILOSC">-->
-<!--                            <input name="price" type="number" min="0" max="10000" step = "0.01" placeholder="cena">zl-->
+
                             <input name="recipe-id" type="text" value = '<?= $dish -> getId() ?>' style="display: none">
 
                     </div>

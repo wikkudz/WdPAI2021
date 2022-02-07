@@ -36,11 +36,12 @@ function createDish(dish) {
 
     const recipe = clone.querySelector(".recipe-template");
 
-
-    recipe.style.backgroundImage = "url("+dish.image+")";
+    recipe.style.backgroundImage = "url('"+dish.image+"')";
     recipe.style.borderRadius = "2em";
-    recipe.style.objectFit = "cover";
+    recipe.style.backgroundSize = "cover";
 
+    const link = clone.querySelector(".link")
+    link.href = "http://localhost:8080/dish?id="+dish.id;
 
     const title =  clone.querySelector('.recipe-title');
     title.innerHTML = dish.title;
@@ -51,5 +52,20 @@ function createDish(dish) {
     const time = clone.querySelector('.time');
     time.innerHTML = dish.time + "min";
 
+    const user = clone.querySelector('.user');
+    user.innerHTML = dish.users_id;
+
+    console.log(dish.price);
+
+    const price = clone.querySelector('.price-value');
+    price.innerHTML = dish.price + "zl";
+
     dishContainer.appendChild(clone);
 }
+
+var item = document.querySelector('section[class="recipes"]');
+
+window.addEventListener("wheel", function (e) {
+    if (e.deltaY > 0) item.scrollLeft += 100;
+    else item.scrollLeft -= 100;
+});

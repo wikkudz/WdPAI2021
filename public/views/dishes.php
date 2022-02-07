@@ -40,7 +40,7 @@
                     <script type="text/javascript">
                         document.getElementById(<?= $dish -> getId()?>).style.backgroundImage = "url('<?= $dish -> getImage()?>')";
                         document.getElementById(<?= $dish -> getId()?>).style.borderRadius = "2em";
-                        document.getElementById(<?= $dish -> getId()?>).style.objectFit = "cover";
+                        document.getElementById(<?= $dish -> getId()?>).style.backgroundSize = "cover";
                     </script>
                     <div class="reciepe-background">
 
@@ -54,13 +54,13 @@
                                 </div>
                             </div>
                             <div class='level'>
-                                <div class="level-text">POZIOM</div>
+                                <div class="level-text">POZIOM:</div>
                                 <div class="difficulty-level"><?= $dish -> getLvl()?></div>
 
                             </div>
                             <div class = "price">
                                 <div class = "price-info">CENA</div>
-                                <div class = "price-value">8zl</div>
+                                <div class = "price-value"><?= $dish ->getPrice()?>zl</div>
 
                             </div>
 
@@ -109,6 +109,7 @@
 </body>
 
 <template id="dish-template">
+    <a class="link">
     <div class="recipe-template">
         <div class="reciepe-background">
             <div class='recipe-title'>
@@ -120,13 +121,13 @@
                     </div>
                 </div>
                 <div class='level'>
-                    <div class="level-text">POZIOM</div>
-                    <div class="difficulty-level">0</div>
+                    <div class="level-text">POZIOM:</div>
+                    <div class="difficulty-level"></div>
 
                 </div>
                 <div class = "price">
                     <div class = "price-info">CENA</div>
-                    <div class = "price-value">8zl</div>
+                    <div class = "price-value"></div>
 
                 </div>
 
@@ -136,7 +137,6 @@
                 </div>
 
                 <div class = "user">
-                    user
                     <i class="fas fa-user"></i>
                 </div>
 
@@ -145,6 +145,7 @@
 
         </div>
     </div>
+    </a>
 </template>
 
 </html>

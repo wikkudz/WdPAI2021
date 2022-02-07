@@ -69,7 +69,9 @@
         <div class="icons-bar">
             <i class="fas fa-user-friends"></i>
             <i class="fas fa-user"></i>
-            <img src="public/img/logo.svg">
+            <a href="http://localhost:8080/dishes">
+                <img class="mainlogo" src="public/img/logo.svg" href="http://localhost:8080/dishes">
+            </a>
         </div>
     </nav>
 </form>

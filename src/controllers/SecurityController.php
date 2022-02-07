@@ -9,14 +9,24 @@ class SecurityController extends AppController
     private $userRepository;
 
     public function login(){
-        $userRepository = new UserRepository();
 
+        $cookie_id = "userId";
+        $cookie_name = "userName";
+        $cookie_surname = "userSurname";
+
+
+        setcookie($cookie_name,"1", time() -(1),"/");
+        setcookie($cookie_id,"1", time() -(1),"/");
+        setcookie($cookie_surname,"1", time() -(1),"/");
+
+
+        $userRepository = new UserRepository();
         if (!$this->isPost()) {
             return $this->render('login');
         }
 
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = hash('sha256',$_POST['password']);
 
         $user = $userRepository ->getUser($email);
 
@@ -32,13 +42,20 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
-        session_start();
-        $_SESSION['id'] = $user ->getId();
-        $_SESSION['name'] = $user -> getName();
-        $_SESSION['surname'] = $user -> getSurname();
 
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/dishes");
+        $cookie_id_value = $user -> getId();
+        $cookie_name_value = $user -> getName();
+        $cookie_surname_value = $user -> getSurname();
+
+        setcookie($cookie_name,$cookie_name_value, time() +(86400),"/");
+        setcookie($cookie_id,$cookie_id_value, time() +(86400),"/");
+        setcookie($cookie_surname,$cookie_surname_value, time() +(86400),"/");
+
+        if(!isset($_COOKIE['userId']) && !isset($_COOKIE['userName']) && !isset($_COOKIE['userSurname'])){
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/dishes");
+        }
+
     }
 
     public function register(){
@@ -66,7 +83,7 @@ class SecurityController extends AppController
             return $this->render('register', ['messages' => ['Hasla nie sa zgodne']]);
         }
 
-        $user = new User($email, md5($password), $name, $surname);
+        $user = new User("",$email, hash('sha256',$password), $name, $surname);
 
         $this-> userRepository-> addUser($user);
 

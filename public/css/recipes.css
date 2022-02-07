@@ -184,3 +184,13 @@ section.recipes{
     grid-area: 3 / 4 / 6 / 6;
 }
 
+a{
+    text-decoration: none;
+
+}
+
+.icons-bar > a{
+    width: 5vw;
+    text-decoration: none;
+    right: 0;
+}

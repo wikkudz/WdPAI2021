@@ -195,8 +195,8 @@ main{
     padding-right: 1vw;
 }
 
-.icons-bar > img{
-    width: 20%;
+.icons-bar> a > img{
+    width: 100%;
 }
 
 .searchbar{
@@ -218,6 +218,13 @@ main{
     padding-right: 0.5em;
     color: #DF861D;
 }
+
+.icons-bar> a > i{
+    font-size: 6vh;
+    padding-right: 0.5em;
+    color: #DF861D;
+}
+
 
 .searchbar > i{
     font-size: 5vh;

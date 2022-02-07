@@ -2,6 +2,8 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../repository/DishRepository.php';
+require_once __DIR__.'/../repository/IngredientRepository.php';
+
 
 class DefaultController extends AppController{
 
@@ -17,11 +19,16 @@ class DefaultController extends AppController{
         $this->render('friends');
     }
 
+    public function profile(){
+        $this->render('profile');
+    }
     public function dish(){
         $id = $_GET['id'];
         $this ->dishRepository = new DishRepository();
+        $this ->ingredientRepository = new IngredientRepository();
         $dish = $this->dishRepository->getDish($id);
-        $this->render('dish',['dish'=>$dish]);
+        $ingredients = $this-> ingredientRepository ->getIngredients($id);
+        $this->render('dish',['dish'=>$dish, 'ingredients' => $ingredients]);
     }
 
 }

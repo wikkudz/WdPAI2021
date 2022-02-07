@@ -34,9 +34,12 @@ function createDish(dish) {
 
     const clone = template.content.cloneNode(true);
 
-    const image = dish.image;
+    const recipe = clone.querySelector(".recipe-template");
 
-    clone.querySelector(".recipe-template").style.backgroundImage= 'url(image)';
+
+    recipe.style.backgroundImage = "url("+dish.image+")";
+    recipe.style.borderRadius = "2em";
+    recipe.style.objectFit = "cover";
 
 
     const title =  clone.querySelector('.recipe-title');

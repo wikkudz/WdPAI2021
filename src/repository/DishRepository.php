@@ -18,12 +18,22 @@ class DishRepository extends Repository
 
         $dish = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        $stmt2 = $this->database->connect()->prepare('
+        SELECT * FROM public.users WHERE id = :id_user
+        ');
+
+        $stmt2->bindParam(':id_user', $dish['users_id'], PDO::PARAM_STR);
+        $stmt2->execute();
+
+        $dish2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+
         if($dish == false){
             return null;
             //TODO dokonczyc
         }
 
-        $test = new Dish(
+
+        return new Dish(
             $dish['id'],
             $dish['title'],
             $dish['description'],
@@ -31,16 +41,13 @@ class DishRepository extends Repository
             $dish['portions'],
             $dish['time'],
             $dish['difficulty'],
+            $dish2['name']." ".$dish2['surname']
         );
 
-        $test -> setId($dish['id']);
-        var_dump($test);
-        return $test;
     }
 
     public function addDish(Dish $dish): void
     {
-        session_start();
         $date = new DateTime();
         $stmt = $this -> database->connect()->prepare('
             INSERT INTO recipes (title, description, portions, time, created_at, users_id, image, difficulty)
@@ -54,7 +61,7 @@ class DishRepository extends Repository
             $dish->getAmount(),
             $dish->getTime(),
             $date->format('Y-m-d'),
-            $_SESSION['id'],
+            $_COOKIE['userId'],
             $dish->getImage(),
             $dish->getLvl()
         ]);
@@ -89,6 +96,16 @@ class DishRepository extends Repository
         $dishes = $stmt-> fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($dishes as $dish){
+
+            $stmt2 = $this->database->connect()->prepare('
+                SELECT * FROM public.users WHERE id = :id_user
+            ');
+
+            $stmt2->bindParam(':id_user', $dish['users_id'], PDO::PARAM_STR);
+            $stmt2->execute();
+
+            $dish2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+
             $result[]= new Dish(
                 $dish['id'],
                 $dish['title'],
@@ -96,7 +113,8 @@ class DishRepository extends Repository
                 $dish['image'],
                 $dish['amount'],
                 $dish['time'],
-                $dish['difficulty']
+                $dish['difficulty'],
+                $dish2['name']." ".$dish2['surname']
             );
 
         }
@@ -119,4 +137,6 @@ class DishRepository extends Repository
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
 }

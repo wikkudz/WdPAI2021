@@ -3,6 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Ingredient.php';
 require_once __DIR__.'/../repository/IngredientRepository.php';
+require_once __DIR__.'/../repository/DishRepository.php';
 
 class IngredientController extends AppController
 {
@@ -17,17 +18,32 @@ class IngredientController extends AppController
     public function addIngredient()
     {
         if($this->isPost()){
+            $ingredients = [];
 
-            $ingredient = new Ingredient(
-                $_POST['ingredient-name'],
-                $_POST['weight'],
-                $_POST['price'],
-                $_POST['recipe-id']
-            );
-            $this->ingredientRepository->addIngredient($ingredient);
-
+            $i = 0;
+            while(isset($_POST['ingredient-name'.$i])){
+                $ingredients[$i] = new Ingredient(
+                    $_POST['ingredient-name'.$i],
+                    $_POST['weight'.$i],
+                    $_POST['price'.$i],
+                    $_POST['recipe-id']
+                );
+                echo ($_POST['ingredient-name'.$i]);
+                $i++;
+            }
+            $this->ingredientRepository->addIngredients($ingredients);
         }
 
-        return $this ->render("add-ingredients",['dish'=>$dish]);
+        $dish = new DishRepository();
+
+        $this->render("dish",["ingredients" => $ingredients, "dish" => $dish->getDish($_POST['recipe-id'])]);
+    }
+
+    public function ingredients($recipe_id)
+    {
+        $ingredients = $this -> ingredientsRepository -> getIngredients($recipe_id);
+
+        $this->render('dish',['ingredients' => $ingredients]);
+
     }
 }

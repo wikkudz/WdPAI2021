@@ -203,8 +203,8 @@ nav{
     padding-right: 1vw;
 }
 
-.icons-bar > img{
-    width: 20%;
+.icons-bar >a> img{
+    width: 100%;
 
 }
 
@@ -282,6 +282,17 @@ ul > li{
     font-family: "Bernard MT";
     font-size: 3vh;
     color: #000000;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+.icons-bar > a{
+    width: 5vw;
+    text-decoration: none;
+    right: 0;
 }
 
 .no-valid{

@@ -191,8 +191,8 @@ nav{
     padding-right: 1vw;
 }
 
-.icons-bar > img{
-    width: 20%;
+.icons-bar > a > img{
+    width: 100%;
 }
 
 .searchbar{
@@ -244,4 +244,15 @@ input.search{
 .fa-filter:before {
     content: "\f0b0";
     font-size: 1em;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+.icons-bar > a{
+    width: 5vw;
+    text-decoration: none;
+    right: 0;
 }

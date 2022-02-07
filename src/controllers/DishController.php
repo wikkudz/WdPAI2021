@@ -25,7 +25,6 @@ class DishController extends AppController
 
     public function addDish()
     {
-        session_start();
 
         if($this->isPost() && is_uploaded_file($_FILES['file']["tmp_name"]) && $this -> validate($_FILES["file"])){
             move_uploaded_file(
@@ -40,7 +39,8 @@ class DishController extends AppController
                 $image_url,
                 $_POST['amount'],
                 $_POST['time'],
-                $_POST['level']
+                $_POST['level'],
+                $_COOKIE['userName']." ".$_COOKIE['userSurname']
             );
 
 
@@ -66,6 +66,8 @@ class DishController extends AppController
             echo json_encode($this->dishRepository->getDishByTitle($decoded['search']));
         }
     }
+
+
 
     public function dishes()
     {

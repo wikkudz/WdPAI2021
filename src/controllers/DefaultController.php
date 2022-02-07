@@ -8,7 +8,6 @@ require_once __DIR__.'/../repository/IngredientRepository.php';
 class DefaultController extends AppController{
 
     private $messages = [];
-    private $dishRepository;
 
     public function index()
     {

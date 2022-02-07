@@ -28,7 +28,7 @@ class DishController extends AppController
 
         if(!isset($_COOKIE['userId']) && !isset($_COOKIE['userName']) && !isset($_COOKIE['userSurname'])){
             $this->messages[] = 'You must be logged in!';
-            $this->render('login',["messages" => $this ->messages]);
+            return $this->render('login',["messages" => $this ->messages]);
         }
         if ($this->isPost() && is_uploaded_file($_FILES['file']["tmp_name"]) && $this->validate($_FILES["file"])) {
             move_uploaded_file(
@@ -76,10 +76,8 @@ class DishController extends AppController
 
     public function dishes()
     {
-
         $dishes = $this -> dishRepository -> getDishes();
         $this->render('dishes',['dishes' => $dishes]);
-
     }
 
     private function validate(array $file): bool

@@ -5,12 +5,12 @@ Aby uruchomić aplikacje należy użyć Dockera oraz polecenia docker-compose up
 
 
 ## Technologie
-*PHP
-*HTML
-*CSS
-*Docker
-*JavaScript
-*PostgreSQL
+* PHP
+* HTML
+* CSS
+* Docker
+* JavaScript
+* PostgreSQL
 
 
 ## Opis projektu
